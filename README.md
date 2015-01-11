@@ -12,3 +12,20 @@ Examlpes for the various ways of using [fluss](https://github.com/drawable/fluss
     * JavaScript
 
 If you find better ways to do this, especially the CommonJS-Typescript variants, please let me know.
+
+## Installation
+
+Clone this to your local drive.
+
+    git clone git://github.com/drawable/fluss-npm-module-usage.git
+
+Install dependencies
+
+    npm install
+    bower install
+
+Gulp needs to be installed globally.
+
+## License
+
+[GNU Free Documentation License](LICENSE)
