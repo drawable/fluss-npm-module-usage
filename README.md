@@ -1,7 +1,7 @@
 fluss NPM module usage
 ======================
 
-Examlpes for the various ways of using fluss in your project. The following variants are covered
+Examlpes for the various ways of using [fluss](https://github.com/drawable/fluss) in your project. The following variants are covered
 
 * Browser
     * AMD, requirejs, Typescript
