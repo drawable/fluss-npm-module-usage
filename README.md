@@ -4,6 +4,7 @@ fluss NPM module usage
 Examlpes for the various ways of using [fluss](https://github.com/drawable/fluss) in your project. The following variants are covered
 
 * Browser
+    * AMD, requirejs, Javascript
     * AMD, requirejs, Typescript
     * CommonJS, browserify, Typescipt. Includes gulp-task for compilation and bundling.
     * CommonJS, browserify, JavaScript. Includes gulp-task for bundling.
@@ -24,7 +25,11 @@ Install dependencies
     npm install
     bower install
 
-Gulp needs to be installed globally.
+[Gulp](http://gulpjs.com/) needs to be installed globally. To build the Typescript examples you'll need [Typescript](http://www.typescriptlang.org/) installed of course.
+
+Build everything
+
+    gulp
 
 ## License
 
