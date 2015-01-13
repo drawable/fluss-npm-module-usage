@@ -10,21 +10,16 @@ require.config({
 
     paths: {
         "libs": "../" + "bower_components",
-        "fluss": "../node_modules/fluss/amd/" + "fluss"
+        "fluss": "../node_modules/fluss/amd/fluss"
     }
 });
 
-define(["libs/domready/ready", "fluss/store"], function(ready, Store) {
+
+define(["libs/domready/ready", "./test"], function(ready, test) {
 
     ready(function() {
-        var array = Store.array();
-
-        array.newItems.forEach(function(update) {
-            console.log(update.value + " was added.")
-        });
-
-        array.push("One");
-        array.push(2);
+        document.write("<h1>fluss - amd, require.js, Typescript</h1>");
+        test.run();
     });
 
 });

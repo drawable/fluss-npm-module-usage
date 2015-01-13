@@ -8,6 +8,40 @@ var gulp = require('gulp');
 var typescript = require('gulp-typescript');
 var browserify = require('browserify');
 var sourcemaps = require('gulp-sourcemaps');
+var source = require('vinyl-source-stream');
+
+
+gulp.task("update-local-fluss", function() {
+   gulp.src(["../fluss/build/**/*.*", "../fluss/build/**/*"])
+       .pipe(gulp.dest("./node_modules/fluss"));
+});
+
+gulp.task("compile-NodeJS_TS", function() {
+    var tsResult = gulp.src(["./NodeJS_TS/**/*.ts"])
+        .pipe(sourcemaps.init())
+        .pipe(typescript({
+            module: "commonjs",
+            target: "ES5"
+        }));
+
+    return tsResult.js
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest("./NodeJS_TS"));
+});
+
+gulp.task("compile-AMDRequireJS_TS", function() {
+    var tsResult = gulp.src(["./AMDRequireJS_TS/**/*.ts"])
+        .pipe(sourcemaps.init())
+        .pipe(typescript({
+            module: "amd",
+            target: "ES5"
+        }));
+
+    return tsResult.js
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest("./AMDRequireJS_TS"));
+});
+
 
 
 gulp.task("compile-CommonJSBrowserify_TS", function() {
@@ -43,3 +77,6 @@ gulp.task("bundle-CommonJSBrowserify_JS", function() {
         .pipe(source("bundle.js"))
         .pipe(gulp.dest("./CommonJSBrowserify_JS/"))
 });
+
+gulp.task("default", ["bundle-CommonJSBrowserify_JS", "bundle-CommonJSBrowserify_TS", "compile-AMDRequireJS_TS", "compile-NodeJS_TS"]);
+

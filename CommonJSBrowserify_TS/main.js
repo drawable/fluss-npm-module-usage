@@ -1,12 +1,14 @@
+/// <reference path="../node_modules/fluss/fluss.d.ts" />
 /**
  * Created by Stephan on 11.01.2015.
  */
 "use strict";
-var Store = require("../node_modules/fluss/lib/store");
-var array = Store.array();
+var Fluss = require("fluss");
+var array = Fluss.Store.array();
 array.newItems.forEach(function (update) {
-    console.log(update.value + " was added.");
+    document.write(update.value + " was added.<br>");
 });
+document.write("<h1>fluss - commonJS, browserify, Typescript</h1>");
 array.push("One");
 array.push(2);
 
