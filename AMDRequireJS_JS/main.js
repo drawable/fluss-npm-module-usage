@@ -9,16 +9,20 @@ require.config({
     baseUrl: "./",
 
     paths: {
-        "libs": "../" + "bower_components",
-        "fluss": "../node_modules/fluss/amd/fluss"
-    }
+        "libs": "../" + "bower_components"
+    },
+
+    packages: [{
+        name: "fluss",
+        location: "../node_modules/fluss/amd/"
+    }]
 });
 
 
-define(["libs/domready/ready", "fluss/store"], function(ready, Store) {
+define(["libs/domready/ready", "fluss"], function(ready, Fluss) {
 
     ready(function() {
-        var array = Store.array();
+        var array = Fluss.Store.array();
 
         array.newItems.forEach(function(update) {
             document.write(update.value + " was added.<br>")

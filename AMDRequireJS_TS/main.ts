@@ -9,9 +9,15 @@ require.config({
     baseUrl: "./",
 
     paths: {
-        "libs": "../" + "bower_components",
-        "fluss": "../node_modules/fluss/amd/fluss"
-    }
+        libs: "../bower_components"
+    },
+    packages: [
+        {
+            name: "fluss",
+            location: "../node_modules/fluss/amd/"
+        }
+    ]
+
 });
 
 
